@@ -2,13 +2,14 @@
 
 tomato () {
 
-  echo "timer started"
-  echo "$(( $1 * 60))"
-
+  echo "timer started for $1 minutes"
+ 
   sleep "$(( $1 * 60))"
+  
+  cat "~/tools/tomato_timer/msg.txt"
+  
+  say "Tomato is up!"
 
-  cat ~/tools/tomato_timer/msg.txt # ascii text art
-  say -v Karen "Tomato is up!" # in case your rocking out
 }
 
 export -f tomato
